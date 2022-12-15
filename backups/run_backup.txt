@@ -1,0 +1,185 @@
+Building configuration...
+
+Current configuration : 3971 bytes
+!
+! Last configuration change at 03:48:06 UTC Thu Dec 15 2022 by cisco
+!
+version 16.9
+service timestamps debug datetime msec
+service timestamps log datetime msec
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+platform console virtual
+!
+hostname Group5_SkillsExam
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+ip domain name example.netacad.com
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+! 
+! 
+! 
+! 
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-2004290
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2004290
+ revocation-check none
+ rsakeypair TP-self-signed-2004290
+!
+!
+crypto pki certificate chain TP-self-signed-2004290
+ certificate self-signed 01
+  3082032A 30820212 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  2E312C30 2A060355 04031323 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 32303034 32393030 1E170D32 32313231 35303230 3834335A 
+  170D3330 30313031 30303030 30305A30 2E312C30 2A060355 04031323 494F532D 
+  53656C66 2D536967 6E65642D 43657274 69666963 6174652D 32303034 32393030 
+  82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02 82010100 
+  DC8D2CE8 2863A1C4 8AC84F79 94FF64B8 720454B0 8586C8A3 F2FB3876 773E7BA8 
+  9A43D341 36B8E702 6E84EE8C ACEB69B2 C983506B 6F28F15F 79CFB991 A3D3FF11 
+  8A3856A9 32EABBBF AE55DCFF 73D476F7 B027749B 35F2E66A D3D9E563 28C5929A 
+  6277FA43 0406AF8C 3DE5685A 5C4C10EA 4FC838B6 8153EEE0 372F47EC E91B881B 
+  A5072CF0 B359B2EC D42FB0CF F8B7D562 FF208D22 3F8AFEFE 6FC62870 353C6F76 
+  86B7425A 1882846A A362CACD 2DB3259C 4396BA49 1B5AC612 CB04C6B7 8237EDBF 
+  2AF8B64C 713F3C15 D92AD17F 2EA73024 0D81C7A2 F87009C5 163E08FE 3DE947B7 
+  54B9A522 3DD856E0 2697056C 0D4A4C32 E2FA9FFE 50AEC404 D0B0B33C BBD26E3B 
+  02030100 01A35330 51300F06 03551D13 0101FF04 05300301 01FF301F 0603551D 
+  23041830 16801453 3A5A07E5 E32FA68E B22CF18A 8E8AB8AC 0302D130 1D060355 
+  1D0E0416 0414533A 5A07E5E3 2FA68EB2 2CF18A8E 8AB8AC03 02D1300D 06092A86 
+  4886F70D 01010505 00038201 010012E0 3D0947B1 BE2FB50A 738042FA 7490AD31 
+  66E69662 6B1FD5EE 4D3A516F A94E6EF6 3AE80B2C BDF05E49 C19601A8 D30119C4 
+  71B3B04B 68273910 C4C40C33 9612EA6D 813D98CB E6E2B506 F2CD9628 F924F52E 
+  0190EC44 A8408CE4 56BCDA5C 2560CC04 75382E96 0E4EC528 352C2FD3 46E0B1B0 
+  E2965EE8 D0E969E5 3A674EFB E3A6A8F1 92153D55 0B3F9E8B C93AE48E 22F85209 
+  9C99095D 0FE7A681 45A98DAA 863C68BA 63E07248 27B3469B 43DEF4F3 32A10190 
+  709C9EB2 280C99C6 F325BAA0 49FD31B0 98FCEB2A BF182EF2 F9A1EE07 90FF89D6 
+  72065B4E FF7C0687 D1CB8DA3 3A6B99BA 000D502F AEA9BCBB 42D59623 02516751 
+  5B697894 5A6CE7B8 760E88E9 50F4
+  	quit
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9BU4EV6LAGR
+no license smart enable
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+netconf-yang
+!
+restconf
+!
+username cisco privilege 15 password 0 cisco123!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+!
+!
+interface GigabitEthernet1
+ description Update IP Address of G Ethernet1
+ ip address 192.168.56.102 255.255.255.0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+ip forward-protocol nd
+no ip http server
+ip http authentication local
+ip http secure-server
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+banner motd ^C
+*                                           *
+**                                         **
+***                                       ***
+***  Cisco Networking Academy             ***
+***                                       ***
+***  This software is provided for        ***
+***   Educational Purposes                ***
+***    Only in Networking Academies       ***
+***                                       ***
+**                                         **
+*                                           *
+^C
+!
+line con 0
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+!
+!
+!
+!
+!
+end

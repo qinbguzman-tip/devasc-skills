@@ -1,0 +1,13 @@
+---
+- name: ADD INT LOOPBACK 1
+  hosts: CSR1kv
+  gather_facts: false
+  connection: local
+
+  tasks:
+  - name: ADD A NEW INT LOOPBACK 1 WITH AN IPv4 10.1.1.5
+    ios_command:
+      commands:
+        - configure terminal
+        - interface loopback1
+        - ip address 10.1.1.5 255.255.255.0

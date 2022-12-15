@@ -1,0 +1,11 @@
+---
+- name: CHANGE HOSTNAME
+  hosts: CSR1kv
+  gather_facts: false
+  connection: local
+  tasks:
+  - name: CHANGE HOSTNAME TO Group5_SkillsExam
+    ios_command:
+      commands:
+        - configure terminal
+        - hostname Group5_SkillsExam

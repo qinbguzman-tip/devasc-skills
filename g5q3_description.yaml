@@ -1,0 +1,13 @@
+---
+- name: DESCRIPTION
+  hosts: CSR1kv
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: ADD DESCRIPTION TO GIGA ETH 1
+      ios_command:
+        commands:
+          - configure terminal
+          - interface GigabitEthernet1
+          - description "Interface G1"
